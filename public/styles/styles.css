@@ -251,3 +251,11 @@ img {
 
   object-fit: cover;
 }
+.row {
+  padding-top: 20px;
+}
+
+.nav {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
