@@ -22,11 +22,7 @@
 =======
   "development": {
     "username": "root",
-<<<<<<< HEAD
     "password": "password123",
-=======
-    "password": "password",
->>>>>>> 0c7e9ce9b14ac035c607f3a03d4fe137840c72bf
     "database": "ToolRental",
     "host": "localhost",
     "dialect": "mysql"
