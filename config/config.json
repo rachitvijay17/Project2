@@ -1,30 +1,9 @@
 {
-<<<<<<< HEAD
-	"development": {
-		"username": "root",
-		"password": null,
-		"database": "exampledb",
-		"host": "localhost",
-		"dialect": "mysql"
-	},
-	"test": {
-		"username": "root",
-		"password": null,
-		"database": "testdb",
-		"host": "localhost",
-		"dialect": "mysql",
-		"logging": false
-	},
-	"production": {
-		"use_env_variable": "JAWSDB_URL",
-		"dialect": "mysql"
-	}
-=======
   "development": {
     "username": "root",
     "password": "password123",
     "database": "ToolRental",
-    "host": "localhost",
+    "host": 3306,
     "dialect": "mysql"
   },
   "test": {
@@ -39,5 +18,4 @@
     "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   }
->>>>>>> 0c7e9ce9b14ac035c607f3a03d4fe137840c72bf
 }
