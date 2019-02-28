@@ -11,7 +11,6 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-
     <link
       href="https://unpkg.com/ionicons@4.5.0/dist/css/ionicons.min.css"
       rel="stylesheet"
@@ -21,7 +20,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="styles/styles.css" />
-
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css"
       rel="stylesheet"
@@ -35,6 +33,18 @@
       href="https://fonts.googleapis.com/css?family=Roboto"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="/public/styles/styles.css" />
+
     <style>
       .row {
         padding-top: 20px;
@@ -48,9 +58,10 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark primary-color fixed-top">
-      <div class="container">
+      <d class="container">
         <!-- Navbar brand -->
-        <a class="navbar-brand" href="#">Navbar</a>
+        <i class="material-icons">build</i
+        ><a class="navbar-brand" href="#">Toolit</a>
 
         <!-- Collapse button -->
         <button
@@ -70,53 +81,41 @@
           <!-- Links -->
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#"
-                >Home
-                <span class="sr-only">(current)</span>
-              </a>
+              <a class="nav-link" href="#">Home </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
+              <a class="nav-link" href="#">Profile</a>
             </li>
 
             <!-- Dropdown -->
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                id="navbarDropdownMenuLink"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-                >Dropdown</a
-              >
-              <div
-                class="dropdown-menu dropdown-primary"
-                aria-labelledby="navbarDropdownMenuLink"
-              >
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
           </ul>
           <!-- Links -->
-
-          <form class="form-inline">
-            <div class="md-form my-0">
-              <input
-                class="form-control mr-sm-2"
-                type="text"
-                placeholder="Search"
-                aria-label="Search"
-              />
-            </div>
-          </form>
         </div>
+        <ion-icon name="cart" size="large"></ion-icon>
+
+        <div class="nav-item dropdown">
+
+          <a
+            class="nav-link dropdown-toggle"
+            id="navbarDropdownMenuLink"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Shopping Cart</a
+          >
+          <div
+            class="dropdown-menu dropdown-primary"
+            aria-labelledby="navbarDropdownMenuLink"
+          >
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div id="payPal"></div>
+            </div>
+          </div>
+        
         <!-- Collapsible content -->
-      </div>
+      
     </nav>
     <br />
     <br />
@@ -277,5 +276,25 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AQlw6Mxhef3Fd9rV83uiHMRN7NyypsEjW77hdgBnzORyatQyrJqzByGELxEWqeRsIjLVv-cYhAJ1U79l"></script>
+   <script>
+      paypal
+        .Buttons({
+          createOrder: function(data, actions) {
+            // Set up the transaction
+            return actions.order.create({
+              purchase_units: [
+                {
+                  amount: {
+                    value: "25.00"
+                  }
+                }
+              ]
+            });
+          }
+        })
+        .render("#payPal");
+    </script>   
+        
   </body>
 </html>
